@@ -4,7 +4,6 @@ public class Noedels : Recipe
 {
     public override string Identifier { get; } = nameof(Noedels);
     public override string Name { get; } = "Noedels";
-    public override Category? Categories { get; }
     public override string? Description { get; }
     public override List<Ingredient> IngredientsPerPerson { get; } =
     [

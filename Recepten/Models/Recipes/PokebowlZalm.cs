@@ -4,7 +4,6 @@ public class PokebowlZalm : Recipe
 {
     public override string Identifier { get; } = nameof(PokebowlZalm);
     public override string Name { get; } = "Pokébowl met zalm";
-    public override Category? Categories { get; }
     public override string? Description { get; }
     public override List<Ingredient> IngredientsPerPerson { get; } =
     [
