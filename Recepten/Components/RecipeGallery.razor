@@ -1,0 +1,6 @@
+﻿<div class="recipe-gallery">
+    @foreach (var recipe in Recipes)
+    {
+        <RecipeCard Recipe="@recipe" OnClick="@(() => OnClickRecipe(recipe))" OnToggleFavorite="@(() => OnToggleFavorite(recipe))" />
+    }
+</div>

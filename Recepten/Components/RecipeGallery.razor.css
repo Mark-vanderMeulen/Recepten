@@ -1,0 +1,7 @@
+﻿.recipe-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--elysium-spacing-md);
+    align-content: flex-start;
+    justify-content: flex-start;
+}

@@ -1,0 +1,11 @@
+﻿@using Recepten.Components
+
+@inherits BasePage
+
+@page "/"
+
+<PageTitle>Recepten</PageTitle>
+
+<div class="page__home">
+    <RecipeGallery Recipes="@_recipes.OrderBy(recipe => recipe.Name)" />
+</div>

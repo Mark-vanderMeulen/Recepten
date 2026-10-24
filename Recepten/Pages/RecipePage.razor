@@ -1,0 +1,59 @@
+﻿@using Elysium.Components.Buttons
+@using Elysium.Components.Layout
+@using Elysium.Icons
+
+@inherits BasePage
+
+@page "/{Identifier}"
+
+<PageTitle>@Recipe.Name</PageTitle>
+
+<div class="page__recipe">
+    @if (!string.IsNullOrWhiteSpace(Recipe.Description))
+    {
+        <div class="description">
+            Dit is een beschrijving van het recept.
+        </div>
+
+        <hr class="divider" />
+    }
+
+    <div class="ingredients-and-instructions" orientation="@Orientation.ToString()">
+        @if (Recipe.IngredientsPerPerson is { Count: > 0 } ingredients)
+        {
+            <ElCollapsibleCard Title="Ingrediënten" Class="ingredients">
+                <div class="persons">
+                    <p class="persons__caption">Personen:</p>
+
+                    <ElIconButton Variant="@ButtonStyle.Text" Icon="@Icons.Dash" Click="@Decrement" />
+                    <p class="persons__count">@_persons</p>
+                    <ElIconButton Variant="@ButtonStyle.Text" Icon="@Icons.Plus" Click="@Increment" />
+                </div>
+
+                <ul class="ingredients__list">
+                    @foreach (var ingredient in ingredients)
+                    {
+                        <li class="ingredient">
+                            @ingredient.GetLabel(_persons)
+                        </li>
+                    }
+                </ul>
+            </ElCollapsibleCard>
+        }
+
+        @if (Recipe.Instructions is { Count: > 0 } instructions)
+        {
+            <ElCard Title="Bereidingswijze" Class="instructions">
+                <ol class="instructions__list">
+                    @foreach (var instruction in instructions)
+                    {
+                        <li class="instruction">
+                            @instruction
+                        </li>
+                    }
+                </ol>
+            </ElCard>
+        }
+    </div>
+
+</div>

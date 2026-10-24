@@ -1,0 +1,19 @@
+﻿@using Elysium.Components.Enums
+@using Elysium.Components.Layout
+@using Elysium.Components.Navigation
+@using Elysium.Icons
+
+@inherits LayoutComponentBase
+
+<ElLayout Style="background-color: var(--md-sys-color-surface)" Orientation="@LayoutOrientation.Vertical">
+    <Content>
+        @Body
+    </Content>
+
+    <BottomNavBar>
+        <ElBottomNavBar>
+            <ElNavItem Href="" Match="@NavItemMatch.All" Icon="@Icons.Fork_Knife" />
+            <ElNavItem Href="favorieten" Icon="@Icons.Star_Fill" />
+        </ElBottomNavBar>
+    </BottomNavBar>
+</ElLayout>

@@ -1,0 +1,52 @@
+﻿.recipe-card {
+    .elysium-card {
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0 0 0 1px var(--md-sys-color-outline);
+        }
+
+        .recipe-card__header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--elysium-spacing-lg);
+
+            .recipe-card__header__name {
+                all: unset;
+                font-size: var(--elysium-font-size-2xl);
+                text-wrap: nowrap;
+                color: var(--md-sys-color-primary);
+            }
+
+            .recipe-card__header__favorite-icon {
+                color: var(--md-sys-color-primary);
+
+                &:hover {
+                    filter: drop-shadow(0 0 1.6px currentColor);
+                }
+            }
+        }
+
+        .recipe-card__image {
+            display: block;
+            max-width: 250px;
+            width: 250px;
+            border-radius: var(--elysium-radius-sm);
+            interpolate-size: allow-keywords;
+            opacity: 0;
+            height: 0;
+            margin-top: 0;
+            animation: reveal 1000ms ease 10ms forwards;
+        }
+    }
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+        height: auto;
+        margin-top: var(--elysium-spacing-lg);
+    }
+}

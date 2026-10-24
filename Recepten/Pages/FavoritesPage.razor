@@ -1,0 +1,10 @@
+﻿@inherits BasePage
+
+@page "/favorieten"
+@using Recepten.Components
+
+<PageTitle>Favorieten</PageTitle>
+
+<div class="page__favorites">
+    <RecipeGallery Recipes="@RecipeService.GetRecipes(recipe => recipe.IsFavorite).OrderBy(recipe => recipe.Name)" />
+</div>

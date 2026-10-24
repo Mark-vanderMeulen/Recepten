@@ -1,0 +1,16 @@
+﻿@using Elysium.Components.Layout
+@using Elysium.Icons
+
+<div class="recipe-card">
+    <ElCard @onclick="@OnClick">
+        <div class="recipe-card__header">
+            <p class="recipe-card__header__name">@Recipe.Name</p>
+
+            <div class="recipe-card__header__favorite-icon" @onclick="@OnToggleFavorite" @onclick:stopPropagation="true">
+                @((Recipe.IsFavorite ? Icons.Star_Fill : Icons.Star).GetSVG())
+            </div>
+        </div>
+
+        <img class="recipe-card__image" src="@($"images/{Recipe.Identifier}.jpg")" onerror="this.style.display='none'" />
+    </ElCard>
+</div>
